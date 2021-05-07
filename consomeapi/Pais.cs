@@ -1,4 +1,5 @@
-﻿using MongoDB.Bson.Serialization.Attributes;
+﻿using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -7,6 +8,9 @@ namespace consomeapi
 {
     class Pais
     {
+        [BsonId]
+        public ObjectId id { get; set; }
+
         [BsonElement("name")]
         public string  name { get; set; }
         [BsonElement("code")]
